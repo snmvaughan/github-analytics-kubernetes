@@ -69,7 +69,7 @@ docker {
 
 task createDockerfile(type: Dockerfile) {
 	destFile = project.file('build/libs/Dockerfile')
-	from 'frolvlad/alpine-oraclejdk8:slim'
+	from 'frolvlad/alpine-oraclejre8:slim'
 	String sysProps = getProp("SYSTEM_PROPS") ?: "-Dfoo=bar"
 	environmentVariable("SYSTEM_PROPS", sysProps)
 	addFile("/${project.name}-${project.version}.jar", "/")
